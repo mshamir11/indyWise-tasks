@@ -1,0 +1,203 @@
+Spice simulation commands:
+
+.control
+tran 5n 100u
+print v(out)
+print i(vc)
+print i(Vpwl1)
+print i(Vpwl2)
+.endc
+Vpwl1 in1 0 0 PWL(0 0 20u 0 20.05u 5 40u 5 40.05u 0 50u 0 50.05u 5 60u 5 60.05u 0 70u 0 70.05u 5)
+Vpwl2 in2 0 0 PWL(0 0 10u 0 10.05u 5 20u 5 20.05u 0 30u 0 30.05u 5 40u 5 40.05u 0 60u 0 60.05u 5)
+
+Vc na 0 5
+Rc na vc 10
+cv na nb 10n
+rcv nb vc 100m
+rload out 0 10k
+cload out 0 100p
+
+.model 2N3906  PNP(Is=455.9E-18 Xti=3 Eg=1.11 Vaf=33.6 Bf=204 Ise=7.558f
++               Ne=1.536 Ikf=.3287 Nk=.9957 Xtb=1.5 Var=100 Br=3.72
++               Isc=529.3E-18 Nc=15.51 Ikr=11.1 Rc=.8508 Cjc=10.13p Mjc=.6993
++               Vjc=1.006 Fc=.5 Cje=10.39p Mje=.6931 Vje=.9937 Tr=10n Tf=181.2p
++               Itf=4.881m Xtf=.7939 Vtf=10 Rb=10, level=1)
+.model 2N3904   NPN(Is=6.734f Xti=3 Eg=1.11 Vaf=74.03 Bf=416.7 Ne=1.259
++               Ise=6.734f Ikf=66.78m Xtb=1.5 Br=.7371 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=3.638p Mjc=.3085 Vjc=.75 Fc=.5 Cje=4.493p Mje=.2593 Vje=.75
++               Tr=239.5n Tf=301.2p Itf=.4 Vtf=4 Xtf=2 Rb=10, level=1)
+
+
+.control
+tran 10u 20u
+print v(in1)
+.endc
+Vin in2 0 0 PWL(0 0 5u 0 15u 5 20u 5)
+rin in1 0 100k
+
+Vc na 0 5
+Rc na vc 10
+cv na nb 10n
+rcv nb vc 100m
+rload out 0 10k
+cload out 0 100p
+
+.model 2N3906  PNP(Is=455.9E-18 Xti=3 Eg=1.11 Vaf=33.6 Bf=204 Ise=7.558f
++               Ne=1.536 Ikf=.3287 Nk=.9957 Xtb=1.5 Var=100 Br=3.72
++               Isc=529.3E-18 Nc=15.51 Ikr=11.1 Rc=.8508 Cjc=10.13p Mjc=.6993
++               Vjc=1.006 Fc=.5 Cje=10.39p Mje=.6931 Vje=.9937 Tr=10n Tf=181.2p
++               Itf=4.881m Xtf=.7939 Vtf=10 Rb=10, level=1)
+.model 2N3904   NPN(Is=6.734f Xti=3 Eg=1.11 Vaf=74.03 Bf=416.7 Ne=1.259
++               Ise=6.734f Ikf=66.78m Xtb=1.5 Br=.7371 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=3.638p Mjc=.3085 Vjc=.75 Fc=.5 Cje=4.493p Mje=.2593 Vje=.75
++               Tr=239.5n Tf=301.2p Itf=.4 Vtf=4 Xtf=2 Rb=10, level=1)
+
+
+.control
+tran 10u 20u
+print v(in2)
+.endc
+Vin in1 0 0 PWL(0 0 5u 0 15u 5 20u 5)
+rin in2 0 100k
+
+Vc na 0 5
+Rc na vc 10
+cv na nb 10n
+rcv nb vc 100m
+rload out 0 10k
+cload out 0 100p
+
+.model 2N3906  PNP(Is=455.9E-18 Xti=3 Eg=1.11 Vaf=33.6 Bf=204 Ise=7.558f
++               Ne=1.536 Ikf=.3287 Nk=.9957 Xtb=1.5 Var=100 Br=3.72
++               Isc=529.3E-18 Nc=15.51 Ikr=11.1 Rc=.8508 Cjc=10.13p Mjc=.6993
++               Vjc=1.006 Fc=.5 Cje=10.39p Mje=.6931 Vje=.9937 Tr=10n Tf=181.2p
++               Itf=4.881m Xtf=.7939 Vtf=10 Rb=10, level=1)
+.model 2N3904   NPN(Is=6.734f Xti=3 Eg=1.11 Vaf=74.03 Bf=416.7 Ne=1.259
++               Ise=6.734f Ikf=66.78m Xtb=1.5 Br=.7371 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=3.638p Mjc=.3085 Vjc=.75 Fc=.5 Cje=4.493p Mje=.2593 Vje=.75
++               Tr=239.5n Tf=301.2p Itf=.4 Vtf=4 Xtf=2 Rb=10, level=1)
+
+
+
+2021-04-21 08:43:17 - Generation - 1 - 23833.4267795:
+R1 12 in1 2.36891329923
+Q2 in2 in2 vc 2N3904
+Q3 14 10 11 2N3906
+Q4 15 12 16 2N3904
+Q5 vc 16 14 2N3906
+R6 16 13 23.9872995516
+Q7 12 19 13 2N3904
+Q8 14 13 17 2N3906
+Q9 16 out 17 2N3906
+
+
+2021-04-21 08:52:51 - Generation - 2 - 26239.1317414:
+Q1 10 11 in2 2N3904
+R2 9 12 36018.1375309
+R3 vc 13 36527.6233801
+Q4 14 12 13 2N3906
+Q5 14 12 15 2N3904
+Q6 16 20 12 2N3906
+Q7 14 17 16 2N3904
+Q8 out 14 12 2N3904
+
+
+2021-04-21 09:02:25 - Generation - 3 - 28443.3733836:
+Q1 10 11 in2 2N3904
+R2 9 12 36018.1375309
+R3 vc 13 36527.6233801
+Q4 14 12 13 2N3906
+Q5 14 12 15 2N3904
+Q6 16 20 12 2N3906
+Q7 14 17 16 2N3904
+Q8 out 14 12 2N3904
+
+
+2021-04-21 09:11:47 - Generation - 4 - 30536.7056719:
+Q1 10 11 in2 2N3904
+R2 9 12 36018.1375309
+R3 vc 13 36527.6233801
+Q4 14 12 13 2N3906
+Q5 14 12 15 2N3904
+Q6 16 20 12 2N3906
+Q7 14 17 16 2N3904
+Q8 out 14 12 2N3904
+
+
+2021-04-21 09:43:50 - Generation - 5 - 32575.3917581:
+R1 12 11 55491.4247377
+R2 vc 12 21719.9893311
+Q3 13 11 12 2N3906
+Q4 13 11 14 2N3904
+Q5 15 19 11 2N3906
+Q6 14 17 16 2N3904
+Q7 out 14 12 2N3904
+
+
+2021-04-21 11:15:10 - Generation - 6 - 34824.2695636:
+R1 12 11 55491.4247377
+R2 vc 12 21719.9893311
+Q3 13 11 12 2N3906
+Q4 13 11 14 2N3904
+Q5 15 19 11 2N3906
+Q6 14 17 16 2N3904
+Q7 out 14 12 2N3904
+
+
+2021-04-21 11:26:26 - Generation - 7 - 37073.1473691:
+R1 12 11 55491.4247377
+R2 vc 12 21719.9893311
+Q3 13 11 12 2N3906
+Q4 13 11 14 2N3904
+Q5 15 19 11 2N3906
+Q6 14 17 16 2N3904
+Q7 out 14 12 2N3904
+
+
+2021-04-21 11:37:53 - Generation - 8 - 39322.0251746:
+R1 12 11 55491.4247377
+R2 vc 12 21719.9893311
+Q3 13 11 12 2N3906
+Q4 13 11 14 2N3904
+Q5 15 19 11 2N3906
+Q6 14 17 16 2N3904
+Q7 out 14 12 2N3904
+
+
+2021-04-21 11:49:34 - Generation - 9 - 38453.4606176:
+Q1 10 11 in2 2N3906
+R2 9 12 2818.63191844
+Q3 8 12 12 2N3906
+Q4 13 11 12 2N3906
+Q5 13 11 14 2N3906
+Q6 15 19 11 2N3906
+Q7 out 13 11 2N3904
+Q8 14 12 14 2N3904
+Q9 vc 12 17 2N3906
+
+
+2021-04-21 16:05:07 - Generation - 10 - 40691.9995271:
+Q1 10 11 in2 2N3906
+R2 9 12 1
+Q3 8 12 12 2N3906
+Q4 13 11 12 2N3906
+Q5 13 11 14 2N3906
+Q6 15 19 11 2N3906
+Q7 out 13 11 2N3904
+Q8 14 12 14 2N3904
+Q9 vc 12 17 2N3906
+
+
+2021-04-21 16:17:26 - Generation - 11 - 42867.9304592:
+Q1 10 11 in2 2N3906
+R2 9 12 2818.63191844
+Q3 8 12 12 2N3906
+Q4 13 11 12 2N3906
+Q5 13 11 14 2N3906
+Q6 14 18 10 2N3906
+R7 12 17 13.9814853256
+Q8 out 13 11 2N3904
+Q9 14 12 14 2N3904
+Q10 vc 12 17 2N3906
+
+

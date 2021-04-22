@@ -1,7 +1,0 @@
-opencv-python==4.5.1.48
-Pillow==8.2.0
-requests==2.25.1
-streamlit==0.80.0
-tensorboard==2.4.1
-tensorflow==2.4.1
-numpy==1.19.5
