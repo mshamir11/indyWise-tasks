@@ -4,7 +4,7 @@
 ## Contents <!-- omit in toc -->
 - [☑️ Problem 1](#️-problem-1)
 - [☑️ Problem 2](#️-problem-2)
-- [Problem 3](#problem-3)
+- [☑️ Problem 3](#️-problem-3)
 - [☑️ Problem 4](#️-problem-4)
 
 
@@ -40,7 +40,7 @@ Use multiimage classifier and detect two different images (rats and squirrel; or
 
 <hr>
 
-### Problem 3
+### ☑️ Problem 3
 Convert one of the page to React / HTML
 <https://dribbble.com/shots/15455950-Banking-Dashboard-UI/>
 

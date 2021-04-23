@@ -33,6 +33,8 @@ Five different variations where tested. And the best among them is selected on t
 
 Dataset Used : [Link](https://www.kaggle.com/enesumcu/car-and-truck)
 
+Link to google collab with various models tried: [Link](https://colab.research.google.com/drive/1LlEAVqdxIWU5QURWvDnQHeX7Z7l7am6r?usp=sharing)
+
 Link to google collab of the final model: [Link](https://colab.research.google.com/drive/1dZjJ18O1PbhPnE7aeB5XSVF5IKdzBIXr?usp=sharing)
 
 ### Requirements ⭐
